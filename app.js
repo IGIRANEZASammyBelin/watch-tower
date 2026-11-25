@@ -1,7 +1,7 @@
 const airstrip = [
     { name: "kanombe Airstrip", country: "Rwanda", lat: -1.9686, lon: 30.1395 },
     { name: "Bugesera Airstrip", country: "Rwanda", lat: -2.2167, lon: 30.1500},
-    { name: "kasese Airstrip", country: "Uganda", lat: 0.1833, lon30.0833 },
+    { name: "kasese Airstrip", country: "Uganda", lat: 0.1833, lon: 30.0833 },
     { name: "Mwanza Airstrip", country: "Tanzania", lat: -2.5167, lon: 329167 },
     { name: "Bujumbura Airstrip", country: "Burundi", lat: -3.3131, lon: 29.2333},
     { name : "Goma Airstrip", country: "Dr Congo", lat: -1.6833, lon: 29.2333 },
@@ -31,7 +31,7 @@ function getRisk(condition,wind) {
     if (condition === "Rainy") return 2;
     return 1;
 }
-async fucntion loadWeather() {
+async function loadWeather() {
     results.innerHTML = "";
     status.textContent = "loading weather...";
     const selected =airstrips.filter(item => {
@@ -115,7 +115,7 @@ async fucntion loadWeather() {
 
 
 } 
-search.addEventListener("input", load weather);
+search.addEventListener("input", loadweather);
 country.addEventListener("change", loadWeather);
 conditions.addEventListener("change", loadWeather);
 sort.addEventListener("change", loadWeather);
