@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Watchtower</title>
+        link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+        <header>
+            <h1>WATCHTOWER</h1>
+            <p>Weather Readings for peivate airstrips in Rwanda.</p>
+
+        </header>
+        <main>
+            <section class="controls">
+                <input
+                 id="search"
+                 type="text"
+                 placeholder="Search for an airstrip"
+                >
+                <select id="countryFilter">
+                    <option value="">ALL countries</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Dr Congo">Dr congo</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Kenya">kenya</option>
+
+                </select>
+                <select id="Conditions">
+                    <option value="">All Conditions</option>
+                    <option value="Sunny">Sunny</option>
+                    <option value="Rainy">Rainy</option>
+                    <option value="Foggy">Foggy</option>
+                    <option value="Strong winds">Strong winds</option>
+                    <option value="Natural Disaster Alert">Natural Disaster Alert</option>
+
+                </select>
+                <select id="sortBy">
+                    <option value="name">sort by name</option>
+                    <option value="temeperature">sort by temperature</option>
+                    <option value="wind">sort by wind speed</option>
+                    <option value ="risk">sort by risk></option>
+
+                </select>
+                <button id="refresh">Refresh</button>
+
+            </section>
+            <p id="status"></p>
+            <section id="results" class="results"></section>
+
+        </main>
+        <footer>
+            <p>
+                Weather data by
+                <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>
+                Watchtower provides general information and doesnot replce official air-control Guidlines and data.
+            </p>
+        </footer>
+        <script src="script.js"></script>
+</body>
+</html>
