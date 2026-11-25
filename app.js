@@ -77,7 +77,47 @@ async fucntion loadWeather() {
         visible.sort((a,b) => a.name.localeCompare(b.name));
 
     } else if (sort.value === "temperature") {
-      visible.sort
+      visible.sort((a, b) => a.temperature - b.temperature);
+    } else if (sort.value === "wind"){
+        visible.sort((a, b) => b.wind - a.wind);
+
+    } else if (sort.value === "risk") {
+        visible.sort((a, b) => b.risk - a.risk);
+
+    }
+    status.textContent = `${visible,length} airstrip(s) found.`;
+    if (visible.length === 0) {
+        results.innerHTML = 
+         "<P class='error'>No airstrips match the selectedcodition.</p>";
+        return; 
     }
 
-}
+    results.innerHTML = visible.map(item => `
+        <article class="card">
+        <h2>${item.name}</h2>
+        <p class="country">${item.country}</p>
+        <span class="condition ${item.condition.toLowerCase().replace(/\s+/g, "-")}"> ${item.condition}
+        </span>
+        <p class="weather">
+          Temperature: ${item.temperature}°C<br>
+          wind speed: ${item.wind} km/h
+        </p>
+    </article>    
+
+    `).join("");
+  
+    } catch (error) {
+        status.textContent = "";
+        results.innerHTML =
+          "<p class='error'>Unable to load weather data. Please check your internet or try again later.</p>";
+
+    } 
+
+
+} 
+search.addEventListener("input", load weather);
+country.addEventListener("change", loadWeather);
+conditions.addEventListener("change", loadWeather);
+sort.addEventListener("change", loadWeather);
+refresh.addEventListener("click", loadWeather);
+loadWeather();
