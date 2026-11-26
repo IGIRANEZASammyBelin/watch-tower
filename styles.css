@@ -11,13 +11,13 @@ body {
     padding: 24px;
 }
 header {
-    text-align: centre;
+    text-align: center;
     margin-bottom: 24px;
 
 }
 h1 {
     font-size: 28px;
-    letter-spacing: 20x;
+    letter-spacing: 2px;
 
 }
 header p {
@@ -43,6 +43,7 @@ button {
 }
 button {
     background: darkblue;
+    color: white;
 }
 #status {
     text-align: center;
@@ -81,19 +82,22 @@ button {
     margin-bottom: 10px;
 }
 .sunny {
-    backgorund: orange;
+    background: orange;
 }
 .rainy {
     background: blue;
 }
 .foggy {
-    backround: gray;
+    background: gray;
 
 }
 .strong-winds {
     background: purple;
 }
-.disaster {
+.natural-disaster-alert {
+    background: darkred;
+}
+.weather {
     font-size: 14px;
     line-height: 1.5;
 }
