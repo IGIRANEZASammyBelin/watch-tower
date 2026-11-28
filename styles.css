@@ -1,11 +1,10 @@
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
 body {
-    font-family : Arial, sans-serif;
+    font-family: Arial,sans-serif;
     background: whitesmoke;
     color: black;
     padding: 24px;
@@ -13,37 +12,41 @@ body {
 header {
     text-align: center;
     margin-bottom: 24px;
-
 }
-h1 {
+h1 { 
     font-size: 28px;
     letter-spacing: 2px;
-
 }
-header p {
+header p { 
     color: dimgray;
     margin-top: 6px;
+
 }
 .controls {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    margin-bottom:20px;
-    
+    margin-bottom: 20px;
+
 }
 input,
 select,
-button {
-    padding: 10px;
+button { 
+    padding: 10px 12px;
     border: 1px solid silver;
     border-radius: 6px;
     font-size: 14px;
-
 }
 button {
     background: darkblue;
     color: white;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s ease;
+}
+button:hover {
+    opacity: 0.9;
 }
 #status {
     text-align: center;
@@ -52,66 +55,102 @@ button {
 }
 .results {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
+
 }
 .card {
     background: white;
     border: 1px solid lightgray;
     border-radius: 8px;
-    padding: 16px
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-}
-.card h2 {
+ }
+ .card.warning-border {
+    border-left: 5px solid darkred;
+
+ }
+ .card h2 {
     font-size: 18px;
     margin-bottom: 4px;
-
-}
-.country {
+ }
+ .country {
     color: dimgray;
-    font-size:13px;
+    font-size: 13px;
     margin-bottom: 10px;
-
-}
-.condition {
+ }
+ .condition {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 20px;
     color: white;
     font-size: 12px;
-    margin-bottom: 10px;
-}
-.sunny {
-    background: orange;
-}
-.rainy {
-    background: blue;
-}
-.foggy {
+    font-weight: bold;
+    margin-bottom: 12px;
+    width: fit-content;
+
+ }
+ .sunny {
+    background: darkorange;
+ }
+ .rainy {
+    background: royalblue;
+
+ }
+ .foggy {
     background: gray;
 
-}
-.strong-winds {
+ }
+ .strong-winds {
     background: purple;
-}
-.natural-disaster-alert {
+ }
+ .natural-disaster-alert {
     background: darkred;
-}
-.weather {
+ }
+ .weather {
     font-size: 14px;
-    line-height: 1.5;
-}
-.error {
+    line-height: 1.6;
+    margin-bottom: 12px;
+ }
+ .advisory-box {
+    background: whitesmoke;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    margin-top: 8px;
+ }
+ .advisory-box.caution {
+    background: lemonchiffon;
+    color: saddlebrown;
+ }
+ .advisory-box.danger {
+    background: mistyrose;
     color: darkred;
-    text-align:  center;
+ }
+ .reschedule-btn {
+    margin-top: 8px;
+    width: 100%;
+    background: midnightblue;
+    font-size: 13px;
+    padding: 8px;
+
+
+ }
+ .error { 
+    color: darkred;
+    text-align:center;
+    grid-column: 1 / -1;
+
 }
-footer {
-    margin-top: 30px;
+ footer {
+    margin-top:30px;
     text-align: center;
     font-size: 13px;
     color: dimgray;
-
-}
-footer a {
-    color : darkblue;
-}
+ }
+ footer a {
+    color: darkblue;
+ }
