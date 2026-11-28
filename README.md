@@ -5,6 +5,7 @@ Watchtower is a data-driven web application built for pilots, charter operators,
 **Live app (load balancer):** http://18.132.97.88
 
 **Repository:** https://github.com/IGIRANEZASammyBelin/watch-tower
+**DEMO VID LINK:**   https://www.youtube.com/watch?v=083gIc4M38Y
 
 ---
 
