@@ -141,10 +141,9 @@ for i in 1 2 3 4; do curl -sI http://18.132.97.88 | grep -i x-served; done
 
 ## Challenges and Solutions
 
-* **Typos in AI-generated Nginx configs:** The first versions of `web.conf` and `lb.conf` contained `server_name_;` (a missing space) and `$remot_addr` (a misspelled variable). AI code checkers and chat assistants read these files and did not flag them. The first real error came from `sudo nginx -t` on the server. Lesson: AI review is not a substitute for running the real validator, so always test configs with `nginx -t` before reloading.
+
 * **Poor AI code checking in general:** AI tools gave confident but incomplete advice, such as a placeholder-filled deployment guide and a wrong file name (`lb_1.conf` instead of `lb.conf`). I fixed this by checking every command against the real repo files and the real server output.
 * **HAProxy already using port 80 on Lb01:** Nginx failed to start with `bind() to 0.0.0.0:80 failed (Address already in use)`. The server image came with HAProxy running, so the balancing I first saw was not coming from my Nginx config. I diagnosed it with `ss -ltnp`, then stopped and disabled HAProxy and started Nginx, and confirmed with the `Server: nginx` header.
-* **Line endings and OneDrive:** Editing the project on Windows (inside OneDrive) with Linux tools produced noisy git diffs from CRLF line endings. I checked diffs with whitespace ignored before committing.
 * **Finding the right SSH keys:** Connecting needed the correct key, so I tested access with a quick `hostname` command on each server before deploying.
 * **Inconsistent files across servers:** An early check showed different file sizes on Web01 and Web02. I compared `md5sum` of the deployed files on both servers to confirm they were identical.
 
