@@ -33,7 +33,7 @@ const SORTERS = {
 let forecasts = [];
 function getCondition(code, wind, visibility){
     if ([95, 96, 99].includes(code)) return "Natural Disaster Alert";
-    if  (wind < 1000) return "Foggy";
+    if  (visibility < 1000) return "Foggy";
     if (wind >=30) return "strong winds";
     if ([51, 53, 55, 61, 61, 65, 80, 81, 82].includes(code)) return "Rainy";
     return "Sunny";

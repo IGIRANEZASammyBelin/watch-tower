@@ -1,0 +1,16 @@
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.key
+# Editor & and IDE folders
+.vscode/
+.idea/
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+#logs & temporary files
+*.log
+npm-debug.log
+.cache/
